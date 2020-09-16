@@ -10,33 +10,25 @@ function App() {
 }
 
 class Parrent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cars: ["BMW", "MERCIDIES", "SUZULI", "atat", "audi"],
+    };
+    this.handleClick = this.handleClick.bind(this); //binding the method
+  }
+  handleClick() {
+    this.setState({ cars: this.state.cars.reverse() });
+  }
   render() {
     return (
       <div>
-        <h2>Just some info</h2>
-        <h3>prop number is :{this.props.propNumber}</h3>
-        <h3>prop number is :{}</h3>
-        <Cars msg="cars are awesome" model="36757" coolCars={this.props.cars} />
+        <h2 onClick={this.handleClick}>Just some info</h2>
+        <Cars msg="cars are awesome" model="36757" coolCars={this.state.cars} />
       </div>
     );
   }
 }
-
-Parrent.propTypes = {
-  propObject: React.propObject,
-  propString: React.propString,
-  propNumber: React.PropString,
-};
-
-Parrent.defaultProps = {
-  propNumber: 5,
-  propString: "hi omprakash",
-  propObject: {
-    obj1: "i am obj1",
-    obj2: "i am obj2",
-    obj3: "i am obj3",
-  },
-};
 
 Parrent.defaultProps = {
   cars: ["BMW", "MERCIDIES", "SUZULI", "MAHINDRA"],
@@ -52,7 +44,7 @@ class Cars extends Component {
         <p>{this.props.model}</p>
         <p>
           {this.props.coolCars.map((item, i) => {
-            return "  " + i + " " + item;
+            return <p key={i}>{item}</p>;
           })}
         </p>
       </div>
