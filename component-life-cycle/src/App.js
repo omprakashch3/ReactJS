@@ -41,6 +41,23 @@ class Body extends Component {
 }
 
 class Numbers extends Component {
+  // componentDidMount() {
+  //   console.log("componentDidMount  here");
+  // }
+  // componentWillMount() {
+  //   console.log("componentWillMount called here");
+  // }
+  // componentWillRecieveProps(newProps) {
+  //   console.log("componentWillRecieveProps  called");
+  // }
+
+  // ComponentDidUpdate(newProps, nextState) {
+  //   console.log("called  ComponentDidUpdate update");
+  // }
+  // componentWillUnmount() {
+  //   console.log("called  componentWillUnmoun un mount");
+  // }
+
   render() {
     return (
       <div>
